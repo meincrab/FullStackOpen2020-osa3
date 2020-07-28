@@ -1,0 +1,19 @@
+{
+  "name": "fullstackopen2020-osa3",
+  "version": "1.0.0",
+  "description": "Osa 3 For FullStack-Open course",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meincrab/FullStackOpen2020-osa3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meincrab/FullStackOpen2020-osa3/issues"
+  },
+  "homepage": "https://github.com/meincrab/FullStackOpen2020-osa3#readme"
+}
