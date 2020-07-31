@@ -1,9 +1,12 @@
 const express = require('express')
 const { request } = require('express')
+const morgan = require('morgan');
 const app = express()
+//Creating token for body
+morgan.token('body', function (req, res) { return JSON.stringify(req.body) });
+//Adding it to format. 
+app.use(morgan(':method :url :status :response-time ms - :res[content-length] :body - :req[content-length]'));
 app.use(express.json())
-
-
 
 let persons = [
           {
