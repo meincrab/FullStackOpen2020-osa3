@@ -2,9 +2,13 @@ const express = require('express')
 const { request } = require('express')
 const morgan = require('morgan');
 const app = express()
+const cors = require('cors')
+
+
 //Creating token for body
 morgan.token('body', function (req, res) { return JSON.stringify(req.body) });
 //Adding it to format. 
+app.use(cors())
 app.use(morgan(':method :url :status :response-time ms - :res[content-length] :body - :req[content-length]'));
 app.use(express.json())
 
@@ -92,6 +96,8 @@ app.post('/api/persons', (request, response) => {
   response.json(persons)
 })
 
-const port = 3001
-app.listen(port)
-console.log(`Server running on port ${port}`)
+
+const PORT = process.env.PORT || 3001
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`)
+})
