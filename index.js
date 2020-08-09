@@ -6,8 +6,6 @@ const app = express()
 const cors = require('cors')
 const Person = require('./models/person')
 
-
-
 //Creating token for body
 morgan.token('body', function (req, res) { return JSON.stringify(req.body) });
 //Adding it to format. 
@@ -65,34 +63,7 @@ app.post('/api/persons', (request, response) => {
   })
 
   person.save().then(savedPerson => {
-    persons = [
-      {
-        "name": "Dan Abramov",
-        "number": "12-43-234345",
-        "id": 3
-      },
-      {
-        "name": "Mary Poppendieck",
-        "number": "39-23-6423122",
-        "id": 4
-      },
-      {
-        "name": "Just Name",
-        "number": "22-22-1111115",
-        "id": 5
-      },
-      {
-        "name": "To Delete",
-        "number": "11-22-333333",
-        "id": 6
-      },
-      {
-        "name": "To Update",
-        "number": "11-11-111111",
-        "id": 7
-      }
-    ]
-    response.json(persons)
+    response.json(savedPerson)
     console.log("This is new person " + savedPerson);
   })
 })
